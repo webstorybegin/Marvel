@@ -16,6 +16,7 @@ export class MarvelService {
     const res = await this.getResource(
       `${this._apiBase}characters?limit=9&offset=310&${this._apiKey}`
     );
+    console.log(res)
     return res.data.results.map(this._transformChar);
   };
 
