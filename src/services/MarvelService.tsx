@@ -16,7 +16,6 @@ export class MarvelService {
     const res = await this.getResource(
       `${this._apiBase}characters?limit=9&offset=310&${this._apiKey}`
     );
-    console.log(res)
     return res.data.results.map(this._transformChar);
   };
 
@@ -28,9 +27,7 @@ export class MarvelService {
   _transformChar = (char) => {
     return {
       name: char.name,
-      descrtiption: char.description
-        ? `${char.description.slice(0, 210)}...`
-        : "There is no description of this character",
+      description: char.description ? `${char.description.slice(0, 210)}...` : "There is no description of this character",
       thumbnail: char.thumbnail.path + "." + char.thumbnail.extension,
       homepage: char.urls[0].url,
       wiki: char.urls[1].url,
