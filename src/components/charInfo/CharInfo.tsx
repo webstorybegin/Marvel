@@ -9,7 +9,7 @@ const CharInfo = () => {
                 <div>
                     <div className="char__info-name">thor</div>
                     <div className="char__btns">
-                        <a href="#" className="button button__main">
+                        <a href="#" rel="noreferrer" className="button button__main">
                             <div className="inner">homepage</div>
                         </a>
                         <a href="#" className="button button__secondary">
