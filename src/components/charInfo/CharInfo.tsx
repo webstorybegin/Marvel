@@ -23,7 +23,7 @@ export class CharInfo extends Component<Props, State> {
   componentDidMount() {
     this.updChar();
   }
-  
+
   componentDidUpdate(prevProps) {
     if (this.props.charId !== prevProps.charId) {
       this.updChar();
@@ -40,7 +40,6 @@ export class CharInfo extends Component<Props, State> {
       .getCharacter(charId)
       .then(this.onCharLoaded)
       .catch(this.onError);
-
   };
 
   onCharLoaded = (char) => {
@@ -103,12 +102,15 @@ const View = ({ char }) => {
       <div className="char__descr">{description}</div>
       <div className="char__comics">Comics:</div>
       <ul className="char__comics-list">
-        {comics.lenght > 0 ? null : 'There is no comics with this character'}
+        {comics.lenght > 0 ? null : "There is no comics with this character"}
         {comics.map((item, index) => {
-            if(item > 9) return;
-          <li key={index} className="char__comics-item">
-            {item.name}
-          </li>;
+          // eslint-disable-next-line
+          if (item > 9) return;
+          return (
+            <li key={index} className="char__comics-item">
+              {item.name}
+            </li>
+          );
         })}
       </ul>
     </>
