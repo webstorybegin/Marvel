@@ -1,10 +1,17 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { Spinner } from "../spinner/Spinner";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 import { MarvelService } from "../../services/MarvelService";
 import "./charList.scss";
 
+
+
 export class CharList extends Component <any, any> {
+  private myRef;
+  constructor(props) {
+    super(props)
+    this.myRef = React.createRef();
+  }
   state = {
     charList: [],
     loading: true,
@@ -59,10 +66,12 @@ export class CharList extends Component <any, any> {
     });
   };
 
+
   renderItems(arr) {
     const items = arr.map((item) => {
       return (
-        <li
+        <li     
+          tabIndex={0}
           className="char__item"
           key={item.id}
           onClick={() => this.props.onCharSelected(item.id)}
