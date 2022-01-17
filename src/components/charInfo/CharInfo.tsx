@@ -1,43 +1,32 @@
 import { useState, useEffect } from "react";
-import { MarvelService } from "../../services/MarvelService";
+import { useMarvelService } from "../../services/useMarvelService";
 import { Spinner } from "../spinner/Spinner";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 import Skeleton from "../skeleton/Skeleton";
 
 import "./charInfo.scss";
 
-export const CharInfo = (props) => {
+export const CharInfo = ({ charId }) => {
   const [char, setChar] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  const marvelSerice = new MarvelService();
+  
+  const { loading, error, getCharacter, clearError } = useMarvelService();
 
   useEffect(() => {
     updChar();
-  }, [props.charId]);
+  }, [charId]);
 
   const updChar = () => {
-    const { charId } = props;
     if (!charId) {
       return;
     }
-    onCharLoading();
-    marvelSerice.getCharacter(charId).then(onCharLoaded).catch(onError);
+
+    clearError();
+    getCharacter(charId)
+    .then(onCharLoaded)  
   };
 
   const onCharLoaded = (char) => {
     setChar(char);
-    setLoading(false);
-  };
-
-  const onCharLoading = () => {
-    setLoading(true);
-  };
-
-  const onError = () => {
-    setLoading(false);
-    setError(true);
   };
 
   const skeleton = char || loading || error ? null : <Skeleton />;
