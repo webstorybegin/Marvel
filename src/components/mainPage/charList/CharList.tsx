@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Spinner } from "../spinner/Spinner";
-import { ErrorMessage } from "../errorMessage/ErrorMessage";
-import { useMarvelService } from "../../services/useMarvelService";
+import { Spinner } from "../../ui/spinner/Spinner";
+import { ErrorMessage } from "../../errorMessage/ErrorMessage";
+import { useMarvelService } from "../../../services/useMarvelService";
 
 import "./charList.scss";
 
@@ -19,8 +19,7 @@ export const CharList = ({ onCharSelected }) => {
 
   const onRequest = (offset, initial) => {
     initial ? setNewItemLoading(false) : setNewItemLoading(true);
-    getAllCharacters(offset)
-      .then(onCharListLoaded);
+    getAllCharacters(offset).then(onCharListLoaded);
   };
 
   const onCharListLoaded = (newCharList) => {

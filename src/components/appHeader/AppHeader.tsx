@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import "./appHeader.scss";
 
 const AppHeader = () => {
@@ -11,11 +13,11 @@ const AppHeader = () => {
       <nav className="app__menu">
         <ul>
           <li>
-            <a href="#">Characters</a>
+            <NavLink to="/">Characters</NavLink>
           </li>
           /
           <li>
-            <a href="#">Comics</a>
+            <NavLink to="/comics">Comics</NavLink>
           </li>
         </ul>
       </nav>

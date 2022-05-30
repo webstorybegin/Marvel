@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { useMarvelService } from "../../services/useMarvelService";
-import { Spinner } from "../spinner/Spinner";
-import { ErrorMessage } from "../errorMessage/ErrorMessage";
-import Skeleton from "../skeleton/Skeleton";
+import { useMarvelService } from "../../../services/useMarvelService";
+import { Spinner } from "../../ui/spinner/Spinner";
+import { ErrorMessage } from "../../errorMessage/ErrorMessage";
+import Skeleton from "../../ui/skeleton/Skeleton";
 
 import "./charInfo.scss";
 
 export const CharInfo = ({ charId }) => {
   const [char, setChar] = useState(null);
-  
+
   const { loading, error, getCharacter, clearError } = useMarvelService();
 
   useEffect(() => {
@@ -21,8 +21,7 @@ export const CharInfo = ({ charId }) => {
     }
 
     clearError();
-    getCharacter(charId)
-    .then(onCharLoaded)  
+    getCharacter(charId).then(onCharLoaded);
   };
 
   const onCharLoaded = (char) => {

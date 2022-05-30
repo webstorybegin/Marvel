@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Spinner } from "../spinner/Spinner";
+import { Spinner } from "../ui/spinner/Spinner";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 import { useMarvelService } from "../../services/useMarvelService";
 
@@ -49,13 +49,9 @@ export const ComicsList = () => {
           </a>
         </li>
       );
-    })
+    });
 
-    return (
-      <ul className="comics__grid">
-          {items}
-      </ul>
-  )
+    return <ul className="comics__grid">{items}</ul>;
   }
 
   const items = renderItems(comicsList);

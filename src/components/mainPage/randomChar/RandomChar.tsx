@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
-import { useMarvelService } from "../../services/useMarvelService";
-import { Spinner } from "../spinner/Spinner";
-import { ErrorMessage } from "../errorMessage/ErrorMessage";
+import { FC, useState, useEffect } from "react";
+import { useMarvelService } from "../../../services/useMarvelService";
+import { ErrorMessage } from "../../errorMessage/ErrorMessage";
+import { Spinner } from "../../ui/spinner/Spinner";
 
-import mjolnir from "../../resources/img/mjolnir.png";
+
+import mjolnir from "../../../resources/img/mjolnir.png";
 
 import "./randomChar.scss";
 
-export const RandomChar = ({ charId }) => {
+interface IRandomChar {
+  readonly charId?: number
+}
+
+export const RandomChar: FC<IRandomChar> = ({ charId }) => {
   const [char, setChar] = useState({});
   const { loading, error, getCharacter, clearError } = useMarvelService();
 
