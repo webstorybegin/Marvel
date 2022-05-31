@@ -70,7 +70,7 @@ const View = ({ comic }: any) => {
       <p>{description}</p>
       <p>Pages: {pageCount}</p>
       <p>Language: {language}</p>
-      <Link to="/comics">Back to all</Link>
+      <Link to="/comics">Back to all</Link> 
     </div>
   );
 };
