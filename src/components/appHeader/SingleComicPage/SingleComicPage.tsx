@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useMarvelService } from "../../../services/useMarvelService";
-import { ErrorMessage } from "../../errorMessage/ErrorMessage";
+import { ErrorMessage } from "../../ErrorMessage/ErrorMessage";
 
 import { makeStyles } from "@material-ui/styles";
-import { Spinner } from "../../ui/spinner/Spinner";
+import { Spinner } from "../../ui/Spinner/Spinner";
 
 const useStyles = makeStyles({
   text: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const SingleComicPage = () => {
+const SingleComicPage = () => {
   const [comic, setComic] = useState(null);
   const { comicId } = useParams();
   const { loading, error, getComic, clearError } = useMarvelService();
@@ -74,3 +74,5 @@ const View = ({ comic }: any) => {
     </div>
   );
 };
+
+export default SingleComicPage;

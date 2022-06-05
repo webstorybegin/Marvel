@@ -1,7 +1,7 @@
-import { ErrorMessage } from "../errorMessage/ErrorMessage";
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
 import { NavLink } from "react-router-dom";
 
-export const Page404 = () => {
+const Page404 = () => {
   return (
     <>
       <ErrorMessage />
@@ -23,3 +23,5 @@ export const Page404 = () => {
     </>
   );
 };
+
+export default Page404;

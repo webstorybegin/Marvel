@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useMarvelService } from "../../../services/useMarvelService";
-import { Spinner } from "../../ui/spinner/Spinner";
-import { ErrorMessage } from "../../errorMessage/ErrorMessage";
-import Skeleton from "../../ui/skeleton/Skeleton";
+import { Spinner } from "../../ui/Spinner/Spinner";
+import { ErrorMessage } from "../../ErrorMessage/ErrorMessage";
+import Skeleton from "../../ui/Skeleton/Skeleton";
 
 import "./charInfo.scss";
 

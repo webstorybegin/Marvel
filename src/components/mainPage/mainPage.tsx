@@ -1,12 +1,12 @@
 import { useState } from "react";
-import RandomChar from "./randomChar/RandomChar";
-import { CharList } from "./charList/CharList";
-import { CharInfo } from "./charInfo/CharInfo";
+import { RandomChar } from "./RandomChar";
+import { CharList } from "./CharList";
+import { CharInfo } from "./CharInfo";
 
 import decoration from "../../resources/img/vision.png";
 import "./mainPage.scss";
 
-export const MainPage = () => {
+const MainPage = () => {
   const [char, setChar] = useState(null);
   const onCharSelected = (id) => {
     setChar(id);
@@ -23,3 +23,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+export default MainPage;
