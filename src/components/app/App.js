@@ -6,7 +6,7 @@ import { Spinner } from "components/ui";
 const Page404  = lazy(() => import('components/404/Page404'))
 const MainPage = lazy(() => import('components/MainPage/MainPage'))
 const ComicsList = lazy(() => import('components/ComicsList/ComicsList'));
-const SingleComicPage = lazy(() => import('components/AppHeader/SingleComicPage/SingleComicPage'))
+const SingleComicPage = lazy(() => import('components/ComicsList/SingleComicPage/SingleComicPage'))
 
 const App = () => {
   return (

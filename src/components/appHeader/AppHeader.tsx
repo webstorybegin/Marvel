@@ -7,7 +7,7 @@ export const AppHeader = () => {
     <header className="app__header">
       <h1 className="app__title">
         <NavLink
-          to="/Marvel"
+          to="/Marvel "
         >
           <span>Marvel</span> information portal
         </NavLink>
